@@ -37,7 +37,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -110,7 +110,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         private final TextView mBuildSize;
 
         private final LinearLayout mProgress;
-        private final ProgressBar mProgressBar;
+        private final LinearProgressIndicator mProgressBar;
         private final TextView mProgressText;
         private final TextView mPercentage;
 
@@ -182,6 +182,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                         R.string.list_download_progress_newer, downloaded, total));
             }
             setButtonAction(viewHolder.mAction, Action.PAUSE, downloadId, true);
+            viewHolder.mProgressBar.setIndicatorColor(R.color.current_accent);
+            viewHolder.mProgressBar.setTrackColor(R.color.current_accent);
             viewHolder.mProgressBar.setIndeterminate(update.getStatus() == UpdateStatus.STARTING);
             viewHolder.mProgressBar.setProgress(update.getProgress());
         } else if (mUpdaterController.isInstallingUpdate(downloadId)) {

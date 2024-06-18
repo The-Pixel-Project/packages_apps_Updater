@@ -10,4 +10,7 @@
 
     <color name="inverted">#212121</color>
     <color name="ic_background">#333333</color>
+    
+    <color name="dot_pref_color">@android:color/system_neutral1_10</color>
+    <color name="current_accent">@android:color/system_accent1_500</color>
 </resources>
