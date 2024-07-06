@@ -7,11 +7,11 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    namespace 'net.pixelos.ota'
+    namespace 'net.tpp.ota'
     compileSdk 33
 
     defaultConfig {
-        applicationId "net.pixelos.ota"
+        applicationId "net.tpp.ota"
         minSdk 33
         targetSdk 33
         versionCode 1
